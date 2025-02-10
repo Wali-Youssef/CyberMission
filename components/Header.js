@@ -109,7 +109,7 @@ const Header = () => {
           {/* Menu Desktop */}
           <nav className="hidden lg:block">
             <ul className="flex space-x-6">
-              {["Accueil", "C'est quoi la cybersécurité ?", "Actualités", "Quiz", "Contact"].map((item, index) => (
+              {["Accueil", "C'est quoi la cybersécurité ?", "Actualités", "Quiz", ].map((item, index) => (
                 <motion.li
                   key={index}
                   whileHover={{ y: -5 }}
@@ -192,18 +192,19 @@ const Header = () => {
                   transition={{ type: "spring", stiffness: 150 }}
                 >
                   {item === "Accueil" ? (
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToTop();
-                        setMenuOpen(false);
-                      }}
-                      className="text-white text-lg hover:text-green-500 transition-all"
-                      style={{ fontFamily: "'Press Start 2P', monospace" }}
-                    >
-                      {item}
-                    </a>
+                  <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    handleLinkClick("cybersecurity");
+    setMenuOpen(false);
+  }}
+  className="text-white text-lg hover:text-green-500 transition-all text-center"
+  style={{ fontFamily: "'Press Start 2P', monospace" }}
+>
+  {item}
+</a>
+
                   ) : item === "C'est quoi la cybersécurité ?" ? (
                     <a
                       href="#"
